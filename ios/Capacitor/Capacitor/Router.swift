@@ -20,7 +20,7 @@ internal struct _Router: Router {
         let pathUrl = URL(fileURLWithPath: path)
 
         // If there's no path extension it also means the path is empty or a SPA route
-        if pathUrl.pathExtension.isEmpty {
+        if pathUrl.pathExtension.isEmpty || path == "" {
             return basePath + "/index.html"
         }
 
